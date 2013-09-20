@@ -16,7 +16,6 @@ namespace MyCookBook.Models
         [MaxLength(25)]
         public String Name { get; set; }
 
-        [Required]
         [MaxLength(255)]
         public String Description { get; set; }
 

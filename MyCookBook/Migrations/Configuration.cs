@@ -11,7 +11,8 @@ namespace MyCookBook.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+           
         }
 
         protected override void Seed(MyCookBook.Models.RecipesDataContext context)

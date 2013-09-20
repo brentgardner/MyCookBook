@@ -5,13 +5,14 @@ using MyCookBook.Models;
 
 namespace MyCookBook.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private RecipesDataContext db = new RecipesDataContext();
 
         //
         // GET: /Category/
-
+         [Authorize]
         public ActionResult Index()
         {
             return View(db.Categories.ToList());
@@ -19,7 +20,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Category/Details/5
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Details(int id = 0)
         {
             Category category = db.Categories.Find(id);
@@ -32,7 +33,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Category/Create
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -43,6 +44,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create(Category category)
         {
             if (ModelState.IsValid)
@@ -57,7 +59,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Category/Edit/5
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id = 0)
         {
             Category category = db.Categories.Find(id);
@@ -73,6 +75,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(Category category)
         {
             if (ModelState.IsValid)
@@ -86,7 +89,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Category/Delete/5
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id = 0)
         {
             Category category = db.Categories.Find(id);
@@ -102,6 +105,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult DeleteConfirmed(int id)
         {
             Category category = db.Categories.Find(id);

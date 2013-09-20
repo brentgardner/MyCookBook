@@ -11,7 +11,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /MealType/
-
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.MealTypes.ToList());
@@ -19,7 +19,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /MealType/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             MealType mealtype = db.MealTypes.Find(id);
@@ -32,7 +32,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /MealType/Create
-
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -43,6 +43,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create(MealType mealtype)
         {
             if (ModelState.IsValid)
@@ -57,7 +58,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /MealType/Edit/5
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id = 0)
         {
             MealType mealtype = db.MealTypes.Find(id);
@@ -73,6 +74,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(MealType mealtype)
         {
             if (ModelState.IsValid)
@@ -86,7 +88,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /MealType/Delete/5
-
+         [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id = 0)
         {
             MealType mealtype = db.MealTypes.Find(id);
@@ -102,6 +104,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult DeleteConfirmed(int id)
         {
             MealType mealtype = db.MealTypes.Find(id);

@@ -15,7 +15,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/
-
+        [Authorize]
         public ActionResult Index()
         {
             var recipes = db.Recipes.Include(r => r.User).Include(r => r.Category).Include(r => r.MealType);
@@ -24,7 +24,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -37,12 +37,12 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName");
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "TypeName");
+            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "Name");
             return View();
         }
 
@@ -51,6 +51,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Recipe recipe)
         {
             if (ModelState.IsValid)
@@ -62,13 +63,13 @@ namespace MyCookBook.Controllers
 
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", recipe.UserId);
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", recipe.CategoryId);
-            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "TypeName", recipe.MealTypeId);
+            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "Name", recipe.MealTypeId);
             return View(recipe);
         }
 
         //
         // GET: /Recipe/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -78,7 +79,7 @@ namespace MyCookBook.Controllers
             }
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", recipe.UserId);
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", recipe.CategoryId);
-            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "TypeName", recipe.MealTypeId);
+            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "Name", recipe.MealTypeId);
             return View(recipe);
         }
 
@@ -87,6 +88,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(Recipe recipe)
         {
             if (ModelState.IsValid)
@@ -97,13 +99,13 @@ namespace MyCookBook.Controllers
             }
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", recipe.UserId);
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", recipe.CategoryId);
-            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "TypeName", recipe.MealTypeId);
+            ViewBag.MealTypeId = new SelectList(db.MealTypes, "MealTypeId", "Name", recipe.MealTypeId);
             return View(recipe);
         }
 
         //
         // GET: /Recipe/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -119,6 +121,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Recipe recipe = db.Recipes.Find(id);

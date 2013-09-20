@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace MyCookBook.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
+       
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to MyCookBook";
@@ -15,6 +17,7 @@ namespace MyCookBook.Controllers
             return View();
         }
 
+        
         public ActionResult About()
         {
             ViewBag.Message = "MyCookbook is a recipe sharing application.";
@@ -22,6 +25,7 @@ namespace MyCookBook.Controllers
             return View();
         }
 
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Don't contact us.";

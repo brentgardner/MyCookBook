@@ -9,7 +9,7 @@ namespace MyCookBook.Models
     public class RecipesDataContext : DbContext
     {
         public RecipesDataContext()
-            : base("RecipesConnection")
+            : base("DefaultConnection")
         {
         }
 
