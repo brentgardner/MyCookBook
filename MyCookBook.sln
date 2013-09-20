@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCookBook", "MyCookBook\MyCookBook.csproj", "{0CA89E6A-E9D5-4DA6-A44D-D5F9EB86EA70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCookBook.Tests", "MyCookBook.Tests\MyCookBook.Tests.csproj", "{EA051854-72AF-4C7E-8926-9EB916E4731B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA89E6A-E9D5-4DA6-A44D-D5F9EB86EA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA89E6A-E9D5-4DA6-A44D-D5F9EB86EA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA89E6A-E9D5-4DA6-A44D-D5F9EB86EA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA89E6A-E9D5-4DA6-A44D-D5F9EB86EA70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA051854-72AF-4C7E-8926-9EB916E4731B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA051854-72AF-4C7E-8926-9EB916E4731B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA051854-72AF-4C7E-8926-9EB916E4731B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA051854-72AF-4C7E-8926-9EB916E4731B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
