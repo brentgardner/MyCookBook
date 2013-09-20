@@ -9,13 +9,14 @@ using MyCookBook.Models;
 
 namespace MyCookBook.Controllers
 {
+    [Authorize(Roles = "users")]
     public class RecipeController : Controller
     {
         private RecipesDataContext db = new RecipesDataContext();
 
         //
         // GET: /Recipe/
-        [Authorize]
+       
         public ActionResult Index()
         {
             var recipes = db.Recipes.Include(r => r.User).Include(r => r.Category).Include(r => r.MealType);
@@ -24,7 +25,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Details/5
-        [Authorize]
+  
         public ActionResult Details(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -37,7 +38,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Create
-        [Authorize]
+        
         public ActionResult Create()
         {
             ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName");
@@ -51,7 +52,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        
         public ActionResult Create(Recipe recipe)
         {
             if (ModelState.IsValid)
@@ -69,7 +70,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Edit/5
-        [Authorize]
+       
         public ActionResult Edit(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -88,7 +89,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        
         public ActionResult Edit(Recipe recipe)
         {
             if (ModelState.IsValid)
@@ -105,7 +106,7 @@ namespace MyCookBook.Controllers
 
         //
         // GET: /Recipe/Delete/5
-        [Authorize]
+        
         public ActionResult Delete(int id = 0)
         {
             Recipe recipe = db.Recipes.Find(id);
@@ -121,7 +122,7 @@ namespace MyCookBook.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        
         public ActionResult DeleteConfirmed(int id)
         {
             Recipe recipe = db.Recipes.Find(id);
