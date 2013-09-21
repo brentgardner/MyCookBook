@@ -184,8 +184,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\MealTypeController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
+    <Compile Include="Controllers\UnitOfMeasureController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,9 +195,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\MealType.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipesDataContext.cs" />
+    <Compile Include="Models\UnitOfMeasure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +331,16 @@
     <Content Include="Views\Recipe\Create.cshtml" />
     <Content Include="Views\Recipe\Edit.cshtml" />
     <Content Include="Views\Recipe\Delete.cshtml" />
+    <Content Include="Views\UnitOfMeasure\Index.cshtml" />
+    <Content Include="Views\UnitOfMeasure\Details.cshtml" />
+    <Content Include="Views\UnitOfMeasure\Create.cshtml" />
+    <Content Include="Views\UnitOfMeasure\Edit.cshtml" />
+    <Content Include="Views\UnitOfMeasure\Delete.cshtml" />
+    <Content Include="Views\INgredient\Index.cshtml" />
+    <Content Include="Views\INgredient\Details.cshtml" />
+    <Content Include="Views\INgredient\Create.cshtml" />
+    <Content Include="Views\INgredient\Edit.cshtml" />
+    <Content Include="Views\INgredient\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,11 +362,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57057</DevelopmentServerPort>
+          <DevelopmentServerPort>55098</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:55888/</IISUrl>
+          <IISUrl>https://localhost:55991/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

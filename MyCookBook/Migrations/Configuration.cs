@@ -49,6 +49,17 @@ namespace MyCookBook.Migrations
                 new MealType { Name = "Dinner"},
                 new MealType { Name = "Snack"}
             );
+
+            context.UnitOfMeasures.AddOrUpdate(
+                u => new { u.Unit, u.UnitAbreviation},
+                new UnitOfMeasure { Unit = "Cup", UnitAbreviation = "Cup"},
+                new UnitOfMeasure { Unit = "Table Spoon", UnitAbreviation = "Tblsp"},
+                new UnitOfMeasure { Unit = "Tea Spoon", UnitAbreviation = "Tsp" },
+                new UnitOfMeasure { Unit = "Ounce", UnitAbreviation = "Oz"},
+                new UnitOfMeasure { Unit = "Pounds", UnitAbreviation = "Lbs" },
+                new UnitOfMeasure { Unit = "Each", UnitAbreviation = "Each"},
+                new UnitOfMeasure { Unit = "Pinch", UnitAbreviation = "Pinch"}
+                );
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model MyCookBook.Models.UnitOfMeasure
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UnitOfMeasure</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Unit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Unit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnitAbreviation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitAbreviation)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UnitOfMeasureId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

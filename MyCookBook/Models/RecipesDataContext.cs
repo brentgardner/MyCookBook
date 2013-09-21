@@ -20,5 +20,9 @@ namespace MyCookBook.Models
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+
+        public DbSet<UnitOfMeasure> UnitOfMeasures { get; set; }
+
+        public DbSet<Ingredient> Ingredients { get; set; }
     }
 }
