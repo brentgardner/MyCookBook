@@ -26,5 +26,6 @@ namespace MyCookBook.Models
 
         public UnitOfMeasure UnitOfMeasure { get; set; }
 
+        public Recipe Recipe { get; set; }
     }
 }

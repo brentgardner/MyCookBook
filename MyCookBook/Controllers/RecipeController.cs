@@ -16,7 +16,7 @@ namespace MyCookBook.Controllers
        
         public ActionResult Index()
         {
-            var recipes = db.Recipes.Include(r => r.User).Include(r => r.Category).Include(r => r.MealType);
+            var recipes = db.Recipes.Include(r => r.User).Include(r => r.Category).Include(r => r.MealType).Include(r => r.Ingredients);
             return View(recipes.ToList());
         }
 
@@ -55,6 +55,11 @@ namespace MyCookBook.Controllers
             if (ModelState.IsValid)
             {
                 db.Recipes.Add(recipe);
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    db.Ingredients.Add(ingredient);
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

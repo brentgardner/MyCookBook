@@ -5,7 +5,7 @@ using MyCookBook.Models;
 
 namespace MyCookBook.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrators")]
     public class MealTypeController : Controller
     {
         private RecipesDataContext db = new RecipesDataContext();

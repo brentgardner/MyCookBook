@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -37,6 +38,8 @@ namespace MyCookBook.Models
         public Category Category { get; set; }
 
         public MealType MealType { get; set; }
+
+        public ICollection<Ingredient> Ingredients { get; set; }
 
 
     }
